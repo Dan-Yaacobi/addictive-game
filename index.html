@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Rift</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hud topbar">
+      <div><strong>Pulse Rift</strong> <span id="waveLabel">Wave 1</span></div>
+      <div>Score <span id="scoreLabel">0</span></div>
+      <div>Core Bank <span id="coreBankLabel">0</span></div>
+    </header>
+
+    <canvas id="game" width="960" height="540" aria-label="Pulse Rift game arena"></canvas>
+
+    <section id="menu" class="overlay show">
+      <div class="panel">
+        <h1>Pulse Rift</h1>
+        <p class="tagline">A neon survival arena built for one-more-run energy.</p>
+        <ul>
+          <li>Move with <kbd>WASD</kbd></li>
+          <li>Dash through danger with <kbd>Space</kbd></li>
+          <li>Your drone auto-fires at the nearest threat</li>
+          <li>Level up mid-run and pick random upgrades</li>
+        </ul>
+        <div class="buttons">
+          <button id="startBtn">Start Run</button>
+          <button id="resetProgressBtn" class="ghost">Reset Meta Progress</button>
+        </div>
+
+        <h2>Permanent Upgrades</h2>
+        <p class="sub">Spend Cores earned in runs. Upgrades persist forever.</p>
+        <div id="metaUpgrades" class="upgrade-grid"></div>
+      </div>
+    </section>
+
+    <section id="levelUp" class="overlay">
+      <div class="panel">
+        <h2>Level Up — Choose an Upgrade</h2>
+        <div id="choices" class="choice-grid"></div>
+      </div>
+    </section>
+
+    <section id="gameOver" class="overlay">
+      <div class="panel">
+        <h2>Run Complete</h2>
+        <p id="runStats"></p>
+        <div class="buttons">
+          <button id="retryBtn">Play Again</button>
+          <button id="menuBtn" class="ghost">Back to Hangar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="src/game.js"></script>
+</body>
+</html>
